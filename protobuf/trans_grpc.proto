@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+service Translater {
+    rpc GetTranslate(TransRequest) returns (TransReply) {}
+    rpc Translate(TransRequest) returns (TransReply) {}
+}
+
+message TransRequest {
+    string from_lang = 1;
+    string to_lang = 2;
+    string query_text = 3;
+
+    string trans_type = 4;
+    string mode = 5;
+    string app_id = 6;
+    string secret_key = 7;
+    
+}
+
+message TransReply {
+    string result = 1;
+}
